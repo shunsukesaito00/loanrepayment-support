@@ -1,19 +1,34 @@
-# サポートサイト（GitHub Pages 用）
+# 借入返済管理 — サポートサイト
 
-App Store Connect の **サポート URL** として使うための静的ページです。
+App Store Connect 向けのサポート／プライバシーページです。
 
-## 専用リポジトリへの反映手順
+## 公開 URL（GitHub Pages）
 
-1. このフォルダ内の **`index.html`** を、作成済みの GitHub 専用リポジトリの **ルート** にコピーする（またはこのフォルダごと中身だけリポジトリに置く）。
-2. Git でコミット・プッシュする。
-3. GitHub 上で **Settings → Pages** を開く。
-4. **Source**: Deploy from a branch → Branch **main**（または **master**）/ folder **/ (root)** を選んで Save。
-5. 表示される URL（例: `https://（ユーザー名）.github.io/（リポジトリ名）/`）を App Store Connect の **サポート URL** に入力する。
+| 用途 | URL |
+|------|-----|
+| サポート URL | https://shunsukesaito00.github.io/loanrepayment-support/ |
+| プライバシーポリシー URL | https://shunsukesaito00.github.io/loanrepayment-support/privacy.html |
+| ads.txt | https://shunsukesaito00.github.io/loanrepayment-support/ads.txt |
+
+リポジトリ: https://github.com/shunsukesaito00/loanrepayment-support
+
+## 更新手順
+
+```bash
+# プロジェクト内の最新素材を同期
+cp ../support-website/{index.html,privacy.html,ads.txt} .
+
+git add index.html privacy.html ads.txt README.md
+git commit -m "Update support site content for App Store listing"
+git push origin main
+```
+
+GitHub Pages は `main` ブランチのルートから配信されています（Settings → Pages）。
 
 ## ファイル
 
 | ファイル | 説明 |
 |----------|------|
-| `index.html` | 問い合わせ先メール付きのサポートページ |
-
-メールアドレスを変更する場合は `index.html` 内の `mailto:` と表示テキストを編集してください。
+| `index.html` | サポート・お問い合わせ |
+| `privacy.html` | プライバシーポリシー |
+| `ads.txt` | AdMob 用販売者宣言 |
